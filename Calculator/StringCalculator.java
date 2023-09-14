@@ -1,5 +1,6 @@
 package Calculator;
 
+
 public class StringCalculator {
 
 
@@ -7,14 +8,15 @@ public class StringCalculator {
         String delimiter = ",";
         int sum = 0;
 
+        if (numbers.isEmpty()) return 0;
         try {
             String[] numArr = numbers.split(delimiter);
-            if (numbers.length() > 3) throw new Exception("Length of sequence must be <= 2");
             for (String s : numArr) {
                 sum += Integer.parseInt(s);
             }
         } catch (Exception e){
             System.out.println(e);
+            return Integer.MIN_VALUE;
         }
         return sum;
     }
